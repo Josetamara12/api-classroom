@@ -1,9 +1,9 @@
-const { crearCurso, listarCursos, actualizarCursos, eliminarCursos } = require('../servicios/serviciosCursos')
+const servicioCurso= require('../servicios/serviciosCursos')
 
 // 1. Crear un curso
 const crearCursosControlador = async (req, res) => {
     try {
-        const curso = await crearCurso(req.body);
+        const curso = await servicioCurso.crearCurso(req.body);
         res.status(201).json(curso);
     } catch (error) {
         console.error(error);
@@ -14,15 +14,26 @@ const crearCursosControlador = async (req, res) => {
 // 2. Listar Cursos 
 const listarCursosControlador = async (req,res) => {
     try {
-        const cursos = await listarCursos();
+        const cursos = await servicioCurso.listarCursos();
         res.status(201).json(cursos);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }    
 };
 
+// 3. Actualizar Cursos
+const actualizarCursosControlador = async (req, res) => {
+    try {
+        const actualizarCursos = await servicioCurso.actualizarCursos(req.params.id, req.body); 
+        res.status(200).json(actualizarCursos);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}; 
+
 module.exports = {
     crearCursosControlador,
-    listarCursosControlador
+    listarCursosControlador,
+    actualizarCursosControlador
 
 }

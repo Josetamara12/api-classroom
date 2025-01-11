@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+packege-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Environment Variables
+.env
+
+# Build artifacts
+dist/
+build/
+
+# IDE/Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Test coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/
+

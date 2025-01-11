@@ -16,6 +16,7 @@ const generarAuthUrl = async () => {
         access_type: 'offline',
         scope: [
             'https://www.googleapis.com/auth/classroom.courses',
+            'https://www.googleapis.com/auth/classroom.courses.readonly',
             'https://www.googleapis.com/auth/userinfo.profile',
             'https://www.googleapis.com/auth/classroom.rosters',
             'https://www.googleapis.com/auth/classroom.rosters.readonly',

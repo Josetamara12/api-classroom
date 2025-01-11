@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const {
     crearCursosControlador,
-    listarCursosControlador
+    listarCursosControlador,
+    actualizarCursosControlador
 }= require('../controladores/controladorCursos');
 
 
@@ -12,5 +13,8 @@ router.post('/cursos', crearCursosControlador);
 
 // listar cursos
 router.get('/cursos', listarCursosControlador);
+
+// actualizar cursos
+router.put('/cursos/:id', actualizarCursosControlador);
 
 module.exports = router; 

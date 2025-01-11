@@ -28,7 +28,23 @@ const listarCursos = async () => {
     }
 }
 
+// Actualizar Detalles del Curso
+const actualizarCursos = async (courseId, courseDetails) => {
+    const classroom = google.classroom({ version: 'v1', auth: oauth2Client }); 
+    try {
+        const actualizarCursos = await classroom.courses.patch({
+            courseId,
+            requestBody: courseDetails,
+        });
+        return actualizarCursos.data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
 module.exports ={
     crearCurso,
-    listarCursos
+    listarCursos,
+    actualizarCursos
+    
 }

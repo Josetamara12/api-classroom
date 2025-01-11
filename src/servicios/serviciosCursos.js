@@ -42,9 +42,20 @@ const actualizarCursos = async (courseId, courseDetails) => {
     }
 }
 
+// Eliminar Curso
+const eliminarCurso = async (idCurso) => {
+    const classroom = google.classroom({ version: 'v1', auth: oauth2Client });
+    try {
+        await classroom.courses.delete({ courseId: idCurso });
+    } catch (error) {
+        throw new Error(error.message);
+     }
+};
+
 module.exports ={
     crearCurso,
     listarCursos,
-    actualizarCursos
+    actualizarCursos,
+    eliminarCurso
     
 }

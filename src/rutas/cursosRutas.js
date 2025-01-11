@@ -4,7 +4,8 @@ const router = express.Router();
 const {
     crearCursosControlador,
     listarCursosControlador,
-    actualizarCursosControlador
+    actualizarCursosControlador,
+    eliminarCursoControlador
 }= require('../controladores/controladorCursos');
 
 
@@ -16,5 +17,8 @@ router.get('/cursos', listarCursosControlador);
 
 // actualizar cursos
 router.put('/cursos/:id', actualizarCursosControlador);
+
+// eliminar Cursos
+router.delete('/cursos/:id', eliminarCursoControlador);
 
 module.exports = router; 

@@ -31,9 +31,20 @@ const actualizarCursosControlador = async (req, res) => {
     }
 }; 
 
+// 4. Eliminar Cursos
+const eliminarCursoControlador = async (req, res) => {
+    try {
+        await eliminarCurso(req.params.id);
+        res.status(204).json({ message: `El curso con el ID ${req.params.id} fue eliminado exitosamente` });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 module.exports = {
     crearCursosControlador,
     listarCursosControlador,
-    actualizarCursosControlador
+    actualizarCursosControlador,
+    eliminarCursoControlador
 
 }

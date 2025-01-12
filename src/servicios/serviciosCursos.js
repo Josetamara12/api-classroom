@@ -13,7 +13,7 @@ const crearCurso = async (detallesCurso) => {
         throw new Error(error.message);
         
     }
-}
+};
 
 // listar Cursos 
 const listarCursos = async () => {
@@ -26,7 +26,7 @@ const listarCursos = async () => {
         console.log('Error al listar los cursos', error.res.data);
         throw new Error(error.message);
     }
-}
+};
 
 // Actualizar Detalles del Curso
 const actualizarCursos = async (courseId, courseDetails) => {
@@ -40,7 +40,7 @@ const actualizarCursos = async (courseId, courseDetails) => {
     } catch (error) {
         throw new Error(error.message);
     }
-}
+};
 
 // Eliminar Curso
 const eliminarCurso = async (idCurso) => {
@@ -58,4 +58,4 @@ module.exports ={
     actualizarCursos,
     eliminarCurso
     
-}
+};

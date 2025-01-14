@@ -6,6 +6,7 @@ require('dotenv').config(); // Cargar variables de entorno
 const autenticacionRutas = require('./rutas/autenticacionRutas'); // Rutas de la utenticación
 const cursosRutas = require('./rutas/cursosRutas'); // rutas de los cursos
 const tareasRutas = require('./rutas/tareasRutas'); // rutas de las tareas 
+const estudiantesRutas = require('./rutas/estudiantesRutas'); // rutas para los estudiantes
 
 const app = express();
 
@@ -29,9 +30,11 @@ app.use('/', autenticacionRutas);
 // Rutas para los cursos
 app.use('/api', cursosRutas);
 
-// Rutas para loa tareas
+// Rutas para las tareas
 app.use('/api', tareasRutas);
 
+// Rutas para los estudiantes
+app.use('api', estudiantesRutas); 
 
 
 module.exports = app;

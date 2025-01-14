@@ -1,5 +1,6 @@
 // importe de dependencias 
-const servicioTareas= require('../servicios/servicioTareas')
+const servicioTareas = require('../servicios/servicioTareas');
+
 
 // 1. Crear tareas
 const crearTareasControlador = async (req, res) => {

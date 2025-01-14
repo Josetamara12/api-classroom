@@ -29,8 +29,8 @@ app.use('/', autenticacionRutas);
 // Rutas para los cursos
 app.use('/api', cursosRutas);
 
-// Rutas para los cursos
-app.use('/api/cursos/:courseId/tareas', tareasRutas);
+// Rutas para loa tareas
+app.use('/api', tareasRutas);
 
 
 

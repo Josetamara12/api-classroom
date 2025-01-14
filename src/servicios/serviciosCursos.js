@@ -52,7 +52,7 @@ const eliminarCurso = async (idCurso) => {
      }
 };
 
-module.exports ={
+module.exports = {
     crearCurso,
     listarCursos,
     actualizarCursos,

@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router(); 
 const {
     agregarEstudianteControlador,
-    listarEstudiantesControlador
+    listarEstudiantesControlador,
+    eliminarEstudianteControlador
+
 
  } = require('../controladores/controladorEstudiantes');
 
@@ -13,6 +15,7 @@ router.post('/cursos/agregar', agregarEstudianteControlador);
 router.get('/cursos/listar/:courseId', listarEstudiantesControlador);
 
 // ruta para eliminar estudiantes
+router.delete('/cursos/eliminar/:courseId/:userId', eliminarEstudianteControlador); 
 
 
 module.exports = router; 

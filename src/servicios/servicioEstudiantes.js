@@ -27,9 +27,22 @@ const listarEstudiantes = async (courseId) => {
     }
 }; 
 
+// eliminar estudiante 
+const eliminarEstudiante = async (userId) => {
+    const classroom = google.classroom({ version: 'v1', auth: oauth2Client });
+    try {
+       const res =  await classroom.courses.students.delete({ userId: userId });
+       console.log(res);
+        return res.data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
 
 module.exports = {
     agregarEstudiante, 
-    listarEstudiantes
+    listarEstudiantes,
+    eliminarEstudiante
     
 };

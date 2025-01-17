@@ -30,7 +30,7 @@ const listarTareasControlador  = async (req, res) => {
  const actualizarTareasControlador = async (req, res) => {
     const { courseId, tareaId } = req.params; // extraigo ambos parametros
     const workDetails = req.body; 
-    try {
+    try {   
         const actualizarTareas = await servicioTareas.actualizarTareas(courseId, tareaId, workDetails);
         res.status(200).json(actualizarTareas);
     } catch (error) {

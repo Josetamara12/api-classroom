@@ -1,4 +1,4 @@
-const servicioCurso= require('../servicios/serviciosCursos')
+const servicioCurso= require('../servicios/servicioCursos')
 
 // 1. Crear un curso
 const crearCursosControlador = async (req, res) => {

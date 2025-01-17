@@ -7,6 +7,7 @@ const autenticacionRutas = require('./rutas/autenticacionRutas'); // Rutas de la
 const cursosRutas = require('./rutas/cursosRutas'); // rutas de los cursos
 const tareasRutas = require('./rutas/tareasRutas'); // rutas de las tareas 
 const estudiantesRutas = require('./rutas/estudiantesRutas'); // rutas para los estudiantes
+const materialesRutas = require('./rutas/materialesRutas'); // rutas para los materiales
 
 const app = express();
 
@@ -35,6 +36,9 @@ app.use('/api', tareasRutas);
 
 // Rutas para los estudiantes
 app.use('api', estudiantesRutas); 
+
+// Rutas para los materiales
+app.use('api', materialesRutas);
 
 
 module.exports = app;
